@@ -34,13 +34,15 @@ CREATE PROCEDURE new()
         COMMENT 'Start new game'
 BEGIN
         DECLARE v_cur_digit TINYINT UNSIGNED DEFAULT NULL;
-        DECLARE i TINYINT UNSIGNED DEFAULT @digit_number - 1;
+        DECLARE i TINYINT UNSIGNED;
         
         -- default number of digits is 4
         IF @digit_number IS NULL THEN
                 SET @digit_number := 4;
         END IF;
         
+	SET i := @digit_number - 1;
+	
         CREATE OR REPLACE TEMPORARY TABLE digit
                 ENGINE = MEMORY
                 SELECT seq AS n FROM seq_1_to_9;
