@@ -41,8 +41,8 @@ BEGIN
                 SET @digit_number := 4;
         END IF;
         
-	SET i := @digit_number - 1;
-	
+        SET i := @digit_number - 1;
+        
         CREATE OR REPLACE TEMPORARY TABLE digit
                 ENGINE = MEMORY
                 SELECT seq AS n FROM seq_1_to_9;
@@ -172,6 +172,9 @@ BEGIN
                         , '\n'
                         , 'To change the number of digits:\n'
                         , 'SET @digit_number := 3;\n'
+                        , '\n'
+                        , 'To allow double digits (for example: 4433):\n'
+                        , 'SET @allow_twin_cows := 1;\n'
                         , '\n'
                         , 'You don''t want to call new() each time\n'
                         , 'if you want to retry, or if you''re playing with someone else.\n'
