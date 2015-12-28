@@ -1,3 +1,12 @@
+NOTE
+====
+
+This project moved to the sql_games repository:
+
+https://github.com/santec/sql_games
+
+This repository is no more maintained.
+
 # Bulls and Cows SQL
 
 This is the popular Bulls and Cows game, implemented in MariaDB using the stored procedures.
